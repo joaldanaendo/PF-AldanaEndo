@@ -134,6 +134,15 @@ body {
     .container__text-contactus {
         background-color: $yellow-color;
     }
+
+    .container__tittle-sitemap {
+        background-color: $dark-color;
+    }
+
+    .container__text-sitemap {
+        background-color: $dark-color;
+        opacity: 95%;
+    }
 }
 
 .container-text {
@@ -306,6 +315,10 @@ input[type=checkbox] {
     width: auto;
 }
 
+.btn-final {
+    margin-top: $space*2;
+}
+
 .modal-content {
     background-color: $dark-color;
 
@@ -316,5 +329,29 @@ input[type=checkbox] {
             width: 98%;
         }
     }
+}
 
+/* ******************************************* */
+/* Estilos del sitemap */
+/* ******************************************* */
+
+.list-group-item {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+
+    a {
+        text-decoration: none;
+        color: $light-color;
+        opacity: 95%;
+
+        &:hover {
+            background-color: $light-color-2;
+            color: $dark-color;
+            border: 1px solid $dark-color;
+            font-weight: bold;
+        }
+    }
 }

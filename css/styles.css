@@ -101,6 +101,13 @@ body {
 .container-block .container__text-contactus {
   background-color: #F7C317;
 }
+.container-block .container__tittle-sitemap {
+  background-color: #2B3035;
+}
+.container-block .container__text-sitemap {
+  background-color: #2B3035;
+  opacity: 95%;
+}
 
 .container-text {
   width: 100%;
@@ -255,6 +262,10 @@ input[type=checkbox] {
   width: auto;
 }
 
+.btn-final {
+  margin-top: 20px;
+}
+
 .modal-content {
   background-color: #2B3035;
 }
@@ -263,6 +274,28 @@ input[type=checkbox] {
 }
 .modal-content .modal-body img {
   width: 98%;
+}
+
+/* ******************************************* */
+/* Estilos del sitemap */
+/* ******************************************* */
+.list-group-item {
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+ul a {
+  text-decoration: none;
+  color: #fff;
+  opacity: 95%;
+}
+ul a:hover {
+  background-color: #ffeba1;
+  color: #2B3035;
+  border: 1px solid #2B3035;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=styles.css.map */
