@@ -1,3 +1,320 @@
-h1 {
-    background-color: red;
+@import "_colors";
+@import "_estructure";
+
+@mixin image_style {
+    width: 100%;
+    border-radius: 10px;
+}
+
+@mixin text_style_light {
+    color: $light-color;
+}
+
+@mixin text_style_dark {
+    color: $dark-color;
+}
+
+@mixin container_text {
+    @include image_style();
+    border: 3px solid $dark-color;
+    margin-bottom: $space/2;
+    padding: 0 $space;
+}
+
+* {
+    --dark-basic-color: $dark-color;
+    --light-basic-color: $light-color;
+    --color-mode-dark: $dark-color-2;
+    --color-transparent: $transparent-color;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $light-color;
+    justify-content: $center;
+
+    @font-face {
+        font-family: "Lato-Light";
+        src: url(../assets/fonts/Lato-Light.ttf);
+    }
+
+    .title_back_light,
+    .subtitle_back_light,
+    .text_aboutus,
+    .text_form,
+    .text_back_light {
+        @include text_style_dark();
+    }
+
+    .title_back_hard,
+    .subtitle_back_hard,
+    .text_back_hard,
+    .container-article-text,
+    .card-text-aboutus,
+    .card-title,
+    .card-text {
+        @include text_style_light();
+    }
+
+}
+
+/* ******************************************* */
+/* Estilos generales */
+/* ******************************************* */
+
+body {
+    background: url(.././assets/Images/background/wall_op.jpg);
+}
+
+.navbar-toggler {
+    background-color: $red-color;
+    border: 2px solid $dark-color-2;
+}
+
+.nav-link {
+    color: $dark-color;
+    background-color: $pink-color;
+    margin: 2px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    padding-right: 10px;
+    padding-left: 10px;
+
+    &:hover {
+        color: $dark-color;
+        background-color: $skyblue-color;
+    }
+}
+
+.table_logo,
+.img_modal,
+.banner__main {
+    @include image_style();
+    border: 2px solid $dark-color;
+}
+
+.container-max {
+    margin: 1rem 5rem;
+    margin-top: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .container-max {
+        margin: 0;
+        margin-top: 1rem;
+    }
+}
+
+.container-block {
+    margin-bottom: $space;
+
+    .container__tittle-index {
+        background-color: $orange-color;
+    }
+
+    .container__tittle-schedule {
+        background-color: $softyellow-color;
+    }
+
+    .container_subtitle-index {
+        background-color: $purple-color;
+    }
+
+    .container__tittle-vlogs {
+        background-color: $skyblue-color;
+    }
+
+    .container__tittle-aboutus,
+    .container__text-aboutus {
+        background-color: $pink-color;
+    }
+
+    .container__tittle-contactus,
+    .container__text-contactus {
+        background-color: $yellow-color;
+    }
+}
+
+.container-text {
+    @include container_text();
+}
+
+/* ******************************************* */
+/* Estilos del footer */
+/* ******************************************* */
+.footer-style {
+    padding-top: $space*5;
+    background-color: $dark-color;
+}
+
+footer {
+    color: $light-color;
+    margin-top: $space*2;
+
+    h3 {
+        margin-bottom: $space*3;
+        font-weight: 800;
+    }
+
+    footer-above {
+        padding-top: $space*5;
+        background-color: $dark-color;
+    }
+
+    .footer-col {
+        margin-bottom: $space*5;
+
+        .footer-below {
+            padding: 25px 0;
+            background-color: $dark-color;
+        }
+    }
+
+}
+
+/* ******************************************* */
+/* Estilos index */
+/* ******************************************* */
+
+.container__division {
+    background-image: url(../assets/Images/background/contactus.jpg);
+    text-align: $center;
+    padding: $space;
+
+    .icons__to-channels {
+        height: 250px;
+        align-items: $center;
+
+        .icon_big {
+            width: 10vw;
+
+            &:hover {
+                width: 12vw;
+                transition: 0.2s
+            }
+        }
+    }
+}
+
+/* ******************************************* */
+/* Estilos schedule */
+/* ******************************************* */
+
+.info_extra,
+#container_section_programas_schedule {
+    margin-top: $space*2;
+}
+
+.card-img-top {
+    margin-top: $space;
+}
+
+/* ******************************************* */
+/* Estilos cards */
+/* ******************************************* */
+
+.card {
+    background-color: $transparent-color;
+
+    div.card-aboutus {
+        border: none;
+    }
+}
+
+.card-img-top-aboutus {
+    border-end-start-radius: 75%;
+    border-end-end-radius: 24%;
+    margin: $space;
+}
+
+.card-body-aboutus {
+    background-color: $dark-color;
+    border-radius: 10%;
+    border: 2px solid $dark-color;
+
+    .card-text-aboutus {
+        color: $light-color;
+        padding: 15px;
+        text-align: justify;
+    }
+}
+
+/* ******************************************* */
+/* Estilos vlogs */
+/* ******************************************* */
+
+.card_minvideos {
+    @extend .card-body-aboutus;
+    border-radius: 2%;
+    margin: $space/2;
+    opacity: 90%;
+}
+
+.container-article {
+    @extend .card_minvideos;
+    padding: 15px;
+
+    div {
+        text-align: center;
+    }
+
+    p {
+        padding: 0 10%;
+    }
+}
+
+/* ******************************************* */
+/* Estilos contactus */
+/* ******************************************* */
+
+.container__section-form {
+    background-image: linear-gradient(to top, $light-color-2, $light-color);
+    text-align: $center;
+    padding: 3%;
+    border-radius: 2%;
+    border-start-end-radius: 15%;
+    border: 3px solid $dark-color;
+    font-size: large;
+
+    label {
+        padding: $space;
+
+        #nombre,
+        #calendario {
+            color: $dark-color;
+            padding-left: $space;
+        }
+    }
+}
+
+input[type=checkbox] {
+    /* Doble-tamaño Checkboxes */
+    -ms-transform: scale(2);
+    /* IE */
+    -moz-transform: scale(2);
+    /* FF */
+    -webkit-transform: scale(2);
+    /* Safari y Chrome */
+    -o-transform: scale(2);
+    /* Opera */
+    padding: 10px;
+    margin-left: 3%;
+}
+
+.btn-primary {
+    width: auto;
+}
+
+.modal-content {
+    background-color: $dark-color;
+
+    .modal-body {
+        display: flex;
+
+        img {
+            width: 98%;
+        }
+    }
+
 }
